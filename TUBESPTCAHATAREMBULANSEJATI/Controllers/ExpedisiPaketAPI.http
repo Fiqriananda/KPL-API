@@ -1,0 +1,49 @@
+@baseUrl = https://localhost:5001
+
+### Get All Pakets
+GET {{baseUrl}}/api/pakets
+
+### Get Paket By ID
+GET {{baseUrl}}/api/pakets/1
+
+### Get Paket By Nomor Resi
+GET {{baseUrl}}/api/pakets/resi/PKG001
+
+### Get Paket By Status
+GET {{baseUrl}}/api/pakets/status/PENDING
+
+### Get Paket By Kota
+GET {{baseUrl}}/api/pakets/kota/Bandung
+
+### Create Paket
+POST {{baseUrl}}/api/pakets
+Content-Type: application/json
+
+{
+  "nomerResi": "PKG001",
+  "pengirim": "Budi Santoso",
+  "penerima": "Ahmad Wijaya",
+  "alamatAsal": "Jl. Merdeka No. 1, Jakarta",
+  "alamatTujuan": "Jl. Sudirman No. 5, Bandung",
+  "beratKg": 2.5,
+  "kota": "Bandung",
+  "biaya": 50000
+}
+
+### Update Paket
+PUT {{baseUrl}}/api/pakets/1
+Content-Type: application/json
+
+{
+  "pengirim": "Budi Santoso",
+  "penerima": "Ahmad Wijaya",
+  "alamatAsal": "Jl. Merdeka No. 1, Jakarta",
+  "alamatTujuan": "Jl. Sudirman No. 5, Bandung",
+  "beratKg": 2.5,
+  "statusPengiriman": "IN_TRANSIT",
+  "kota": "Bandung",
+  "biaya": 50000
+}
+
+### Delete Paket
+DELETE {{baseUrl}}/api/pakets/1
